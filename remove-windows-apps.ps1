@@ -13,7 +13,7 @@ foreach($element in $array){
                 echo "$name has been deleted"
             } catch {
                 echo "An error occured, $name has not been uninstalled"
-                $numer--
+                $number--
             }
         }
     }
