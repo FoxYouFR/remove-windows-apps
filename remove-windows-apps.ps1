@@ -1,4 +1,4 @@
-﻿$array = Get-AppxPackage | Select Name, SignatureKind
+$array = Get-AppxPackage | Select Name, SignatureKind
 $number = 0
 
 foreach($element in $array){
@@ -8,12 +8,11 @@ foreach($element in $array){
         if($answer -eq "yes"){
             echo "Trying to remove $name"
             try{ 
-                $number++
                 Get-AppxPackage $element.Name | Remove-AppxPackage
                 echo "$name has been deleted"
+                $number++
             } catch {
                 echo "An error occured, $name has not been uninstalled"
-                $number--
             }
         }
     }
